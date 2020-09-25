@@ -3,6 +3,9 @@ from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 now = datetime.now()
 
+
+
+# Way 1
 Session = sessionmaker(bind = engine)
 session = Session()
 
@@ -30,3 +33,9 @@ users_table = Table(
 
 for d, u in session.query(destination_table, users_table).filter(destination.id == users.destination_id).all():
    print ("ID: {} Name: {} Destination No: {}".format(d.id,u.name, u.destination_id))
+
+
+
+#Way 2
+
+### pass

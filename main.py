@@ -1,6 +1,7 @@
 from sqlalchemy import Table, Column, Integer, String, MetaData
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+
 now = datetime.now()
 
 
@@ -19,7 +20,7 @@ destination_table = Table(
    Column('id', Integer, primary_key = True), 
    Column('name', String), 
    Column('destination_id', Integer, primary_key = True), 
-   Column(formatted_date, String), 
+   Column('created_at', String), 
 )
 
 users_table = Table(
@@ -27,7 +28,7 @@ users_table = Table(
    Column('id', Integer, primary_key = True), 
    Column('name', String), 
    Column('destination_id', Integer, primary_key = True), 
-   Column(formatted_date, String), 
+   Column('created_at', String), 
 )
 
 
